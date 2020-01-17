@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Reddit CustomTagger",
+    "version": "0.1",
+    "icons": {
+        "48": "icons/tagger-48.png",
+        "96": "icons/tagger-96.png"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+          "matches": ["*://*.reddit.com/*"],
+          "js": ["tagger.js"]
+        }
+    ],
+    "browser_action": {
+        "default_icon": "icons/tagger-32.png"
+    },
+    "permissions": ["storage"],
+    "applications": {
+        "gecko": {
+          "id": "reddit-tagger@lempamo"
+        }
+    }
+}
